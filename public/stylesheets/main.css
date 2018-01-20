@@ -15,11 +15,12 @@
     margin-top: -20px; }
   .jumbotron .lang-logo {
     display: block;
-    background: #B01302;
+    /*background: #B01302;*/
+    background: white;
     border-radius: 50%;
-    overflow: hidden;
-    width: 100px;
-    height: 100px;
+    /*overflow: hidden;*/
+    width: 90px;
+    height: 90px;
     margin: auto;
     border: 2px solid white; }
     .jumbotron .lang-logo img {
