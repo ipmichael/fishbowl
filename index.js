@@ -12,6 +12,14 @@ var cool = require('cool-ascii-faces');
 var express = require('express');
 var app = express();
 var pg = require('pg');
+var bodyParser = require('body-parser');
+var path = require("path");
+
+//support parsing of application/json type post data
+app.use(bodyParser.json());
+
+//support parsing of application/x-www-form-urlencoded post data
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -35,6 +43,12 @@ app.get('/cool', function(request, response) {
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
+});
+
+
+app.post('/gameroom',function(request, response){
+  response.setHeader('Content-Type', 'application/json');
+  response.render('pages/gameroom');
 });
 
 app.get('/times', function(request, response) {
