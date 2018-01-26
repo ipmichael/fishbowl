@@ -70,3 +70,9 @@ app.get('/db', function (request, response) {
     });
   });
 });
+
+app.post('/gameroom',function(req,res){
+  var room=req.body.room;
+  console.log("Room = "+room);
+  res.end("yes");
+});
