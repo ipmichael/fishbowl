@@ -45,12 +45,6 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-
-app.post('/gameroom',function(request, response){
-  response.setHeader('Content-Type', 'application/json');
-  response.render('pages/gameroom');
-});
-
 app.get('/times', function(request, response) {
     var result = ''
     var times = process.env.TIMES || 5
@@ -74,5 +68,5 @@ app.get('/db', function (request, response) {
 app.post('/gameroom',function(req,res){
   var room=req.body.room;
   console.log("Room = "+room);
-  res.end("yes");
+  res.render('pages/gameroom');
 });
